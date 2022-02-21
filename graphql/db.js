@@ -1,42 +1,37 @@
 let movies = [
   {
     id: 0,
-    name: "heetae",
-    score: 3,
+    name: "Star Wars - The new one",
+    score: 1,
   },
   {
     id: 1,
-    name: "kim",
-    score: 2,
+    name: "Avengers - The new one",
+    score: 8,
   },
   {
     id: 2,
-    name: "You",
-    score: 3,
-  },
-  {
-    id: 3,
-    name: "Me",
+    name: "The Godfather I",
     score: 99,
   },
   {
-    id: 4,
-    name: "Park",
-    score: 5,
+    id: 3,
+    name: "Logan",
+    score: 2,
   },
 ];
 
 export const getMovies = () => movies;
 
 export const getById = (id) => {
-  const filteredMovies = movies.filter((movies) => movies.id === String(id));
+  const filteredMovies = movies.filter((movie) => movie.id === id);
   return filteredMovies[0];
 };
 
 export const deleteMovie = (id) => {
-  const cleanMovies = movies.filter((movie) => movie.id !== String(id));
-  if (movies.length > cleanMovies.length) {
-    movies = cleanMovies;
+  const cleanedMovies = movies.filter((movie) => movie.id !== id);
+  if (movies.length > cleanedMovies.length) {
+    movies = cleanedMovies;
     return true;
   } else {
     return false;
